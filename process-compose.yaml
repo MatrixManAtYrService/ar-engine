@@ -1,0 +1,14 @@
+version: "0.5"
+
+processes:
+ foo:
+   command: |
+     sleep 5
+     echo foo
+ bar:
+  command: |
+   sleep 5
+   echo bar
+  depends_on:
+    foo:
+      condition: "process_completed_successfully"
